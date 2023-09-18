@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 #open image
-img1 = Image.open('Input Image/Oops1.jpg')
+img1 = Image.open('Input Image/template.jpg')
 img2 = Image.open('Input Image/Oops2.jpg')
 
 output_img = img1.copy() #copy image
