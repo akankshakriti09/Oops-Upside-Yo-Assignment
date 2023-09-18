@@ -15,16 +15,23 @@ brand_service_img = Image.open('Input Image/Hairstyle.jpg').resize((980,738))
 output_img = template_img.copy() #copy image
 output_img.paste(brand_service_img,(100,50,1080,788))
 
-"""(91,938),(970,995)"""
+
+
 # Call draw Method to add 2D graphics in an image
+brand_name = ImageDraw.Draw(output_img)
 service_name = ImageDraw.Draw(output_img)
+
+# Custom font style and font size
+brandFont = ImageFont.truetype('Fonts/PromoTest-Normal-BF63b78802deb68.otf', 33)
 serviceFont = ImageFont.truetype('Fonts/EquipExtended W03 Light.ttf', 80)
 
 # Add Text to an image
-service_name.text((100, 920), "Vandana Luthra Curls and Curves (VLCC)", font=serviceFont, fill=("#4E4945"))
+brand_name.text((50, 796), "Oops Upside Yo Head", font=brandFont, fill=("white"))
+service_name.text((100, 920), "Hairstyling In Houston", font=serviceFont, fill=("#4E4945"))
 
 #save output image in folder
 output_img.save('Output Image/pillow_img.jpg')
 
 #show output image
 output_img.show()
+
