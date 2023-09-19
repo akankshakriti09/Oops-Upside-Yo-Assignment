@@ -12,11 +12,11 @@ template_img = Image.open('Template Image/template.jpg') #open image
 From Coordinates, we obtain height and width of image we have to paste on template :
 Width = 1080-100 = 980 
 Height = 788-50 = 738 """
-brand_service_img=img.resize((980,738))
+temp_img=img.resize((980,738))
 new_template_img = template_img.copy() #copy image
-new_template_img.paste(brand_service_img,(100,50,1080,788)) #paste image
+new_template_img.paste(temp_img,(100,50,1080,788)) #paste image
+new_template_img.save('Template Image/temp_img.jpg')
 # new_template_img.show()
-#output_img.show()
 
 """To input text over template"""
 
@@ -41,7 +41,7 @@ BrandNameImage = create_image((432,64), '#DFCAD1', brand_name, brandFont,'white'
 BrandNameImage.save('Template Image/brand_name_img.jpg')
 # BrandNameImage.show()
 
-template_img2= Image.open('Template Image/template2.jpg') #open image
+template_img2= Image.open('Template Image/temp_img.jpg') #open image
 newBrandNameImage = Image.open('Template Image/brand_name_img.jpg') 
 # newBrandNameImage.show()
 brand_template_img = template_img2.copy() #copy image
@@ -70,6 +70,12 @@ service_template_img = template_img3.copy() #copy image
 """While Pasting we have to take 4 tuples defining the left, upper, right, and lower pixel co-ordinate"""
 service_template_img.paste(newServiceNameImage,(0,852,1080,1080))
 service_template_img.save('Template Image/serviceTemplate.jpg')
-service_template_img.show()
+service_template_img.save('Template Image/serviceTemplate.jpg')
+# service_template_img.show()
+
+# show output image
+final_output_img = service_template_img
+final_output_img.save('Output Image/pil_output.jpg')
+final_output_img.show()
 
 
